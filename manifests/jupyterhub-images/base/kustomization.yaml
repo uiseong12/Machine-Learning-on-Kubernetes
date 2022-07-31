@@ -4,7 +4,7 @@ resources:
   - elyra-notebook-base-imagestream.yaml
   - elyra-notebook-spark3-imagestream.yaml
   - customnotebook-imagestream.yaml
-  - customnotebook-imagestream-1.yaml
+    #  - customnotebook-imagestream-1.yaml
 
 commonLabels:
   opendatahub.io/component: "false"
