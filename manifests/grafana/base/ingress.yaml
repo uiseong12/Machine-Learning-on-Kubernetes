@@ -8,6 +8,7 @@ metadata:
   annotations:
     openshift.io/host.generated: 'false'
 spec:
+  ingressClassName: nginx        
   tls:
     - hosts:
       - $(GRAFANA_HOST)
