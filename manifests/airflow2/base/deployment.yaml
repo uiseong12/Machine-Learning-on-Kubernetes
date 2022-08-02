@@ -236,7 +236,7 @@ spec:
           terminationMessagePolicy: File
           image: 'k8s.gcr.io/git-sync/git-sync:v3.2.2'
         - name: airflow-web
-          image: quay.io/ml-on-k8s/2.2.3.web.keycloak
+          image: quay.io/ml-on-k8s/airflow:2.2.3.web.keycloak
           imagePullPolicy: "Always"
 #          securityContext:
 #            runAsUser: 1001
