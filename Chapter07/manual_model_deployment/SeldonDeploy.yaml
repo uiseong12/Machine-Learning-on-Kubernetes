@@ -13,7 +13,7 @@ spec:
       - componentSpecs:
         - spec:
             containers:
-              - image: quay.io/ml-on-k8s/hellomlflow-manual:1.0.0
+              - image: docker.io/you881123/hellomlflow-manual:1.0.0
                 imagePullPolicy: Always
                 name: model-test-predictor
                 env:

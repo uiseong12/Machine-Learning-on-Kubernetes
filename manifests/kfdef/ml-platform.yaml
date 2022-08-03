@@ -49,7 +49,7 @@ spec:
           - name: AIRFLOW_HOST  
             value: airflow.192.168.219.170.nip.io
           - name: DAG_REPO
-            value: 'https://github.com/airflow-dags/dags/'
+            value: 'https://github.com/uiseong12/airlfow-dags/'
 
         repoRef:
           name: manifests
