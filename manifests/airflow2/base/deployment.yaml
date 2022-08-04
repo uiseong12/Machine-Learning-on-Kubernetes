@@ -46,7 +46,7 @@ spec:
                     app.kubernetes.io/instance: app-aflow
                     app.kubernetes.io/component: scheduler
                 namespaces:
-                  - "ml-workshop"
+                  - "ml-workshop2"
                 topologyKey: kubernetes.io/hostname
               weight: 1
         nodeAffinity:
@@ -194,7 +194,7 @@ spec:
                     app.kubernetes.io/instance: app-aflow
                     app.kubernetes.io/component: web
                 namespaces:
-                  - "ml-workshop"
+                  - "ml-workshop2"
                 topologyKey: kubernetes.io/hostname
               weight: 1
         nodeAffinity:
@@ -321,7 +321,7 @@ spec:
               value: '$(CLIENT_SECRET)'  
 
             - name: AIRFLOW_NAMESPACE
-              value: ml-workshop
+              value: ml-workshop2
             - name: SA_SECRET_KEY
               valueFrom:
                 secretKeyRef:
@@ -373,7 +373,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: primary
   annotations:
-  namespace: ml-workshop
+  namespace: ml-workshop2
 spec:
   serviceName: app-aflow-postgresql-headless
   replicas: 1
@@ -407,7 +407,7 @@ spec:
                     app.kubernetes.io/instance: app-aflow
                     app.kubernetes.io/component: primary
                 namespaces:
-                  - "ml-workshop"
+                  - "ml-workshop2"
                 topologyKey: kubernetes.io/hostname
               weight: 1
         nodeAffinity:
@@ -481,7 +481,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: app-aflow-redis-master
-  namespace: "ml-workshop"
+  namespace: "ml-workshop2"
   labels:
     app.kubernetes.io/name: redis
     helm.sh/chart: redis-14.8.11
@@ -527,7 +527,7 @@ spec:
                     app.kubernetes.io/instance: app-aflow
                     app.kubernetes.io/component: master
                 namespaces:
-                  - "ml-workshop"
+                  - "ml-workshop2"
                 topologyKey: kubernetes.io/hostname
               weight: 1
         nodeAffinity:
@@ -636,7 +636,7 @@ spec:
                     app.kubernetes.io/instance: app-aflow
                     app.kubernetes.io/component: worker
                 namespaces:
-                  - "ml-workshop"
+                  - "ml-workshop2"
                 topologyKey: kubernetes.io/hostname
               weight: 1
         nodeAffinity:

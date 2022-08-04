@@ -14,7 +14,7 @@ metadata:
     # field is broken in some versions of Kubernetes:
     # https://github.com/kubernetes/kubernetes/issues/58662
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
-  namespace: ml-workshop
+  namespace: ml-workshop2
 spec:
   type: ClusterIP
   clusterIP: None
@@ -41,7 +41,7 @@ metadata:
     app.kubernetes.io/instance: app-aflow
     app.kubernetes.io/managed-by: Helm
   annotations:
-  namespace: ml-workshop
+  namespace: ml-workshop2
 spec:
   type: ClusterIP
   ports:
@@ -58,7 +58,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app-aflow-redis-headless
-  namespace: "ml-workshop"
+  namespace: "ml-workshop2"
   labels:
     app.kubernetes.io/name: redis
     helm.sh/chart: redis-14.8.11
@@ -80,7 +80,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app-aflow-redis-master
-  namespace: "ml-workshop"
+  namespace: "ml-workshop2"
   labels:
     app.kubernetes.io/name: redis
     helm.sh/chart: redis-14.8.11

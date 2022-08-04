@@ -1,0 +1,39 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: opendatahub-ml-workshop
+#  namespace: opendatahub
+spec:
+  applications:
+    - kustomizeConfig:
+        overlays:
+          - kubernetes
+        parameters:
+          - name: namespace
+            value: ml-workshop2
+        repoRef:
+          name: manifests
+          path: manifests/odh-common
+      name: odh-common
+    - kustomizeConfig:
+        parameters:
+          - name: KEYCLOAK_URL  
+            value: keycloak.192.168.219.170.nip.io
+          - name: CLIENT_SECRET
+            value: 'efbb6591-86d0-4270-a544-f47689460a85'
+          - name: AIRFLOW_HOST  
+            value: airflow.192.168.219.170.nip.io
+          - name: DAG_REPO
+            value: 'https://github.com/uiseong12/airlfow-dags/'
+
+        repoRef:
+          name: manifests
+          path: manifests/airflow2
+      name: airflow2
+  repos:
+    - name: kf-manifests
+      uri: https://github.com/kubeflow/manifests/archive/v1.2-branch.tar.gz
+    - name: manifests
+      uri: https://github.com/uiseong12/Machine-Learning-on-Kubernetes/tarball/main
+  version: master
+
