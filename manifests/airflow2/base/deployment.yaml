@@ -273,7 +273,7 @@ spec:
                   key: redis-password
 
             - name: AIRFLOW_EXECUTOR
-              value: KubernetesExecutor
+              value: CeleryExecutor
             - name: AIRFLOW_WEBSERVER_HOST
               value: "0.0.0.0"
             - name: AIRFLOW_WEBSERVER_PORT_NUMBER
