@@ -1,0 +1,25 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: opendatahub-ml-workshop
+#  namespace: opendatahub
+spec:
+  applications:
+    - kustomizeConfig:
+        parameters:
+          - name: s3_endpoint_url
+            value: "minio-ml-workshop.ml-workshop:9000"
+          - name: MINIO_HOST  
+            value: minio.192.168.219.170.nip.io
+
+        repoRef:
+          name: manifests
+          path: manifests/minio
+      name: minio
+  repos:
+    - name: kf-manifests
+      uri: https://github.com/kubeflow/manifests/archive/v1.2-branch.tar.gz
+    - name: manifests
+      uri: https://github.com/uiseong12/Machine-Learning-on-Kubernetes/tarball/main
+  version: master
+
