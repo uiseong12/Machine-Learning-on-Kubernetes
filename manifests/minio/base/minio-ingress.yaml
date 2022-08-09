@@ -2,7 +2,7 @@
 # kind: Route
 # apiVersion: route.openshift.io/v1
 # metadata:
-# #  namespace: ml-workshop
+#   namespace: minio
 #   name: minio-ml-workshop
 #   labels:
 #     helm.sh/chart: s3-server-0.0.1
